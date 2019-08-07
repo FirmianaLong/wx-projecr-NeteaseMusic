@@ -1,0 +1,15 @@
+<!--pages/login/login.wxml-->
+<view class="index">
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <view class="index-item">
+      <image src="../../image/phone.png" class="" mode="aspectFit"></image>
+      <input placeholder='手机号' class="" name="phone_value"></input>
+    </view>
+    <view class="index-item">
+      <image src="../../image/password.png" class="" mode="aspectFill"></image>
+      <input placeholder='密码' name="password_value" type="password"></input>
+    </view>
+
+    <button class="common-btn" type="warn" formType="submit">登录</button>
+  </form>
+</view>

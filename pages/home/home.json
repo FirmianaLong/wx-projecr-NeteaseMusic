@@ -1,0 +1,5 @@
+{
+  "usingComponents":{
+    "firstcom":"../component/firstcom/firstcom"
+  }
+}

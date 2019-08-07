@@ -1,0 +1,21 @@
+<button bindtap="chooseimage">上传图片</button>
+<view class="index">
+  <view class="img-wrap">
+    <block wx:for="{{tempFilePaths}}" wx:key>
+      <view class="img-item-wrap">
+        <image src="{{item }}" mode="aspectFill" bindtap="previewImage" />
+      </view>
+    </block>
+  </view>
+</view>
+<button bindtap="start" class='btn'>开始录音</button>
+<button bindtap="stop" class='btn'>停止录音</button>
+<button bindtap="play" class='btn'>播放录音</button>
+<button bindtap="getSport" class='btn'>微信运动</button>
+<view class="runDataView">
+  <!-- <view wx:for="{{runData}}"> -->
+    <view> {{runData}} </view>
+  <!-- </view> -->
+</view>
+<button bindtap="playMusic" class='btn'>音乐播放</button>
+

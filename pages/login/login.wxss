@@ -1,0 +1,4 @@
+/* pages/login/login.wxss */
+.index{
+  padding: 20rpx;
+}

@@ -1,0 +1,38 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/account/account",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/map/map",
+    "pages/imgList/imgList",
+    "pages/audio/audio",
+    "pages/login/login",
+    "pages/play/play"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#dd504f",
+    "navigationBarTitleText": "云音乐",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "selectedColor": "#dd504f",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "主页"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/account/account",
+        "text": "账号"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

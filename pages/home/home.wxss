@@ -1,0 +1,128 @@
+/* pages/home/home.wxss */
+
+.avater {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.info {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.index {
+  /* margin-top: 20rpx; */
+  display: flex;
+  background-color: #fff;
+  border-bottom: 1px solid #e1e1e1;
+  font-size: 32rpx;
+}
+
+.option {
+  width: 33.33%;
+  height: 90rpx;
+  text-align: center;
+  line-height: 90rpx;
+  color: #333;
+}
+
+.select {
+  width: 33.33%;
+  height: 90rpx;
+  text-align: center;
+  line-height: 90rpx;
+  font-size: 34rpx;
+  color: rgb(221, 80, 79);
+  border-bottom: 2px solid rgb(222, 80, 79);
+}
+
+.musicList {
+  font-size: 32rpx;
+}
+
+.title {
+  position: relative;
+  padding-left: 20rpx;
+  margin: 30rpx 0;
+  height: 40rpx;
+  line-height: 40rpx;
+}
+
+.title::after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -14rpx;
+  width: 5rpx;
+  height: 32rpx;
+  background-color: #d33a31;
+}
+
+.recommend-div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.recommend-div-item {
+  flex-basis: 33%;
+}
+
+.recommend-div-item-image {
+  width: 100%;
+}
+
+.recommend-div-item-name {
+  font-size: 24rpx;
+  display: -webkit-box;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.newsongdiv-item {
+  padding: 0 20rpx;
+  display: flex;
+  align-items: center;
+  height: 90rpx;
+  font-size: 32rpx;
+}
+
+.newsongdiv-item-info {
+  flex: 1;
+  display: -webkit-box;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.newsongdiv-item-info-detail {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.playDivBorder {
+  width:35rpx;
+  height: 35rpx;
+  border: 1rpx solid #999;
+  border-radius: 50%;
+  
+}
+
+.playDiv {
+  margin: 8rpx 0 0 15rpx;
+  width: 0;
+  height: 0;
+  border-width: 12rpx;
+  border-style: dashed dashed dashed solid;
+  border-color: transparent transparent transparent #999;
+}

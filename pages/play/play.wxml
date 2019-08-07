@@ -1,0 +1,9 @@
+<!--pages/play/play.wxml-->
+
+<view class="m-song-bg" style="background-image: url('{{picUrl}}')">
+  <view class="m-song-bgc">
+    <view class="m-song-conter">
+      <image src="{{picUrl}}"></image>
+    </view>
+  </view>
+</view>

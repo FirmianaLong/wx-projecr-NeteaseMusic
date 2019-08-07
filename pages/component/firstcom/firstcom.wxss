@@ -1,0 +1,31 @@
+/* pages/component/firstcom/firstcom.wxss */
+:host{
+  font-size: 32rpx;
+  
+}
+.slottext{
+  text-align: center;
+}
+.login-slot{
+  color:#dd504f
+}
+.inputwrap{
+  margin-top: 70rpx;
+}
+.login-input{
+  padding:0 50rpx;
+  border: 5rpx solid #e1e1e1;
+  width: 400rpx;
+  height: 100rpx;
+  margin:0 auto;
+  border-radius: 100rpx;
+  color: #333;
+}
+.login-button{
+  width: 400rpx;
+  border-radius: 200rpx;
+  margin-top: 100rpx;
+  background-color: #dd504f;
+  border: 1rpx solid #e1e1e1;
+  color:#333;
+}

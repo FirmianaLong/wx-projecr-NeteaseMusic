@@ -1,0 +1,37 @@
+<!--pages/account/account.wxml-->
+<view class="index">
+  <view class="loginOption" wx:if="{{loginViewShow==1}}">
+    <view class="account">
+      <view class="account-item" bindtap="showInput">手机号登录</view>
+      <view class="account-item">注册</view>
+    </view>
+  </view>
+
+  <view class="{{loginViewShow==2?'loginInput':'loginInput'}}" animation="{{animationData}}" wx:elif="{{loginViewShow==2}}">
+    <form bindsubmit="formSubmit" bindreset="formReset">
+      <view class="index-item">
+        <image src="../../image/phone.png" class="" mode="aspectFit"></image>
+        <input placeholder='手机号' class="" name="phone_value"></input>
+      </view>
+      <view class="index-item">
+        <image src="../../image/password.png" class="" mode="aspectFill"></image>
+        <input placeholder='密码' name="password_value" type="password"></input>
+      </view>
+      <button class="common-btn" type="warn" formType="submit">登录</button>
+    </form>
+    <view bindtap='showLogin' style="text-align:center;margin-top:40rpx">返回</view>
+  </view>
+
+  <view wx:else>
+    <view class="info">
+      <image src="{{accountInfo.profile.avatarUrl}}"></image>
+      <view class="info-detail">
+        <view>{{accountInfo.profile.nickname}}</view>
+        <view class="info-level">{{accountInfo.profile.gender?'男':'女'}}</view>
+      </view>
+        <view class="signInBtn">签到</view>
+    </view>
+  </view>
+
+
+</view>

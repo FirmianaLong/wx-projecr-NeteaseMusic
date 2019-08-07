@@ -1,0 +1,4 @@
+<!--pages/audio/audio.wxml-->
+<button bindtap="play"  class='btn'>开始</button>
+<button bindtap="pause"  class='btn'>暂停</button>
+

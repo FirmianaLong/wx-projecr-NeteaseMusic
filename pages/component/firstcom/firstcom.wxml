@@ -1,0 +1,18 @@
+<!--pages/component/firstcom/firstcom.wxml-->
+<view>
+  <view wx:if="{{!loginShow}}">
+    <view>{{myProperty}}</view>
+    <slot class="login-slot" name="before"></slot>
+    <view class="inputwrap">
+      <input class="login-input" placeholder='手机号'></input>
+    </view>
+    <slot class="login-slot" name="after" class="slottext"></slot>
+    <view class="inputwrap">
+      <input class="login-input" placeholder='密码'></input>
+    </view>
+    <button class="login-button" bindtap='clickButton2' hover-start-time='1000' hover-stay-time='1000' bindtap='clickButton'>登录</button>
+  </view>
+
+
+
+</view>

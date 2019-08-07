@@ -1,0 +1,98 @@
+/* pages/account/account.wxss */
+
+.index {
+  font-size: 32rpx;
+}
+
+.loginOption {
+  height: 1000rpx;
+  font-size: 30rpx;
+  width: 750rpx;
+  display: table-cell;
+  vertical-align: middle;
+  padding: 20rpx;
+}
+
+.account {
+  width: 100%;
+  text-align: center;
+}
+
+.account-item {
+  width: 80%;
+  height: 70rpx;
+  line-height: 70rpx;
+  margin: 20rpx auto;
+  border: 1rpx #e83636 solid;
+  border-radius: 35rpx;
+  text-align: center;
+  color: #e83636;
+  font-weight: 700;
+}
+
+.loginInput {
+  position: relative;
+  left: 750rpx;
+  padding: 20rpx;
+}
+
+.index-item {
+  margin-top: 10rpx;
+  border-bottom: 1rpx solid #ccc;
+}
+
+image {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+input {
+  margin-left: 20rpx;
+  font-size: 35rpx;
+  width: 91%;
+  display: inline-block;
+}
+
+.common-btn {
+  margin-top: 60rpx;
+  border-radius: 60rpx;
+}
+
+.info {
+  vertical-align: middle;
+  padding: 40rpx;
+  display: flex;
+  align-items: center;
+  border-bottom:  1rpx solid #ddd;
+}
+
+.info image {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+}
+
+.info-detail {
+  flex: 1;
+  margin-left: 20rpx;
+  font-size: 40rpx;
+  display: inline-block;
+}
+
+.info-level {
+  font-size: 24rpx;
+  border-radius: 10rpx;
+  height: 24rpx;
+}
+
+
+.signInBtn {
+  float: right;
+  font-size: 28rpx;
+  border: 1rpx solid #e83636;
+  color: #e83636;
+  border-radius: 20rpx;
+  height: 40rpx;
+  width: 100rpx;
+  text-align: center;
+}
