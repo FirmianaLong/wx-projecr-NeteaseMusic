@@ -122,6 +122,9 @@
    height: 35rpx;
    border: 1rpx solid #999;
    border-radius: 50%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }
 
 .playDiv {

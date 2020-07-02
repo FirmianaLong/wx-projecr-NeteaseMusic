@@ -11,11 +11,13 @@ const apiConfig = {
    //推荐新音乐
    newsong: `${host}/personalized/newsong`,
    //获取音乐 url
-   songurl: `${host}/music/url`,
+   songurl: `${host}/song/url`,
    //可获取推荐歌单
    personalized: `${host}/personalized`,
    //获取歌词
    lyric: `${host}/lyric`,
+   //所有榜单
+   toplist: `${host}/toplist`,
    //排行榜
    list: `${host}/top/list`,
    //搜索

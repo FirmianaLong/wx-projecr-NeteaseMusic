@@ -1,5 +1,6 @@
 // pages/home/home.js
 const app = getApp();
+// const regeneratorRuntime = require('../../utils/runtime.js');
 Page({
 
    /**
@@ -26,6 +27,7 @@ Page({
       personalized: [],
       newsong: [],
       indexList: 0,
+      topList:[],
       typeArray: [
          '云音乐新歌榜',
          '云音乐热歌榜',
@@ -129,12 +131,21 @@ Page({
       this.setData({
          indexList: e.detail.value
       })
-      this.getList(this.data.indexList);
+      this.getList(this.data.topList[e.detail.value].id);
+   },
+   //歌榜toplist
+   getTopList: function(idx) {
+      app.util.request('POST', app.apiConfig.toplist, {}).then(data => {
+         this.setData({
+            topList: data.data.list
+         })
+         console.log(this.data.topList)
+      })
    },
    //热歌榜
    getList: function(idx) {
       app.util.request('POST', app.apiConfig.list, {
-         idx:idx
+         id:idx
       }).then(data => {
          this.setData({
             listsong: data.data.playlist.tracks
@@ -166,14 +177,14 @@ Page({
    /**
     * 生命周期函数--监听页面加载
     */
-   onLoad: function(options) {
+onLoad: function(options) {
       this.imageLoad();
       // this.requestCellphone();
       // this.requestMusicPlayList();
       this.getPersonalized();
       this.getNewSong();
-      this.getList(this.data.indexList);
-      this.search();
+      this.getTopList();
+      this.getList(this.data.topList[0].id);
    },
 
    /**

@@ -53,9 +53,9 @@
 
    <view class="SecondTab" hidden="{{buttonOpiton!=1}}">
       <view class="selList">
-         <picker bindchange="bindPickerChange" value="{{indexList}}" range="{{typeArray}}">
+         <picker bindchange="bindPickerChange" value="{{indexList}}" range="{{topList}}" range-key="name">
             <view class="picker">
-              {{typeArray[indexList]}}
+              {{topList[indexList].name}}
             </view>
          </picker>
       </view>
