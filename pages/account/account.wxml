@@ -1,6 +1,6 @@
 <!--pages/account/account.wxml-->
 <view class="index">
-  <view class="loginOption" wx:if="{{loginViewShow==1}}">
+  <view class="loginOption" wx:if="{{loginViewShow==1}}" >
     <view class="account">
       <view class="account-item" bindtap="showInput">手机号登录</view>
       <view class="account-item">注册</view>
@@ -29,7 +29,7 @@
         <view>{{accountInfo.profile.nickname}}</view>
         <view class="info-level">{{accountInfo.profile.gender?'男':'女'}}</view>
       </view>
-        <view class="signInBtn">签到</view>
+        <!-- <view class="signInBtn">签到</view> -->
     </view>
   </view>
 

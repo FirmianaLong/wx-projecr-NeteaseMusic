@@ -1,0 +1,19 @@
+var F = {
+   filterKeyLight: function(text, filterKey) {
+      if (!filterKey) return text;
+      var reg = getRegExp(filterKey, 'g')
+      var result = text.replace(reg, "<span class='blue'>" + filterKey + "</span>");
+      return result;
+   },
+
+   addZero:function(num){
+      return num < 10 ? "0" + num : num
+   }
+}
+
+
+
+module.exports = {
+   filterKeyLight: F.filterKeyLight,
+   addZero: F.addZero,
+}

@@ -13,41 +13,95 @@
 </view> -->
 
 <!-- 选项卡 -->
+<wxs module="lightWord" src="../../filter/filter.wxs"></wxs>
+
 <view class="index">
-  <view wx:for="{{buttonList}}" wx:key="index" class="option {{buttonOpiton==index?'select':''}}" bindtap="isbuttonChecked" data-index="{{index}}">{{item.text}}</view>
+   <view wx:for="{{buttonList}}" wx:key="index" class="option {{buttonOpiton==index?'select':''}}" bindtap="isbuttonChecked" data-index="{{index}}">{{item.text}}</view>
 </view>
 
+
 <view class="musicList">
-  <view class="">
-    <!-- <button bindtap='resource'>点击</button> -->
-    <view class="title">推荐歌单</view>
-    <view class="recommend-div">
-      <view class="recommend-div-item" wx:for="{{personalized}}" wx:key wx:if="{{index<6}}">
-        <image class="recommend-div-item-image" src="{{item.picUrl}}" mode="widthFix"></image>
-        <view class="recommend-div-item-name">{{item.name}}</view>
+   <view class="FirstTab" hidden="{{buttonOpiton!=0}}">
+       <!-- <image wx:for="{{campusServerImg}}" wx:for-item="item" wx:key="id" wx:for-index="idx" src="{{item}}"  data-idx='{{idx}}' ></image>
+      	<image src="{{1?passImg:nopassImg}}" class="qualifications"></image> -->
+      <view class="title">推荐歌单</view>
+      <view class="recommend-div">
+         <view class="recommend-div-item" wx:for="{{personalized}}" wx:key wx:if="{{index<6}}">
+            <image class="recommend-div-item-image" src="{{item.picUrl}}" mode="widthFix"></image>
+            <view class="recommend-div-item-name">{{item.name}}</view>
+         </view>
       </view>
-    </view>
 
-    <view class="title">最新音乐</view>
-    <view class="newsongdiv">
-      <view wx:for="{{newsong}}" wx:key>
-        <!-- <navigator url="../play/play?id={{item.id}}&picUrl={{encodeURIComponent(item.song.album.picUrl)}}"  class="newsongdiv-item"> -->
-        <view class="newsongdiv-item">
-          <view class="newsongdiv-item-info" bindtap="toPlay" data-id="{{item.id}}" data-picUrl="{{item.song.album.picUrl}}">
-            <view class="">{{item.name}}
+      <view class="title">最新音乐</view>
+      <view class="newsongdiv">
+         <view wx:for="{{newsong}}" wx:key>
+            <!-- <navigator url="../play/play?id={{item.id}}&picUrl={{encodeURIComponent(item.song.album.picUrl)}}"  class="newsongdiv-item"> -->
+            <view class="newsongdiv-item">
+               <view class="newsongdiv-item-info" bindtap="toPlay" data-id="{{item.id}}" data-picUrl="{{item.song.album.picUrl}}">
+                  <view class="">{{item.name}}
+                  </view>
+                  <view class="newsongdiv-item-info-detail">{{item.song.artists[0].name}}-{{item.song.name}}</view>
+               </view>
+               <view class="playDivBorder">
+                  <view class="playDiv"></view>
+               </view>
             </view>
-            <view class="newsongdiv-item-info-detail">{{item.song.artists[0].name}}-{{item.song.name}}</view>
-          </view>
-          <view class="playDivBorder">
-            <view class="playDiv"></view>
-          </view>
-        </view>
-        <!-- </navigator> -->
+            <!-- </navigator> -->
+         </view>
       </view>
-    </view>
-  </view>
+   </view>
 
-  <view></view>
+   <view class="SecondTab" hidden="{{buttonOpiton!=1}}">
+      <view class="selList">
+         <picker bindchange="bindPickerChange" value="{{indexList}}" range="{{typeArray}}">
+            <view class="picker">
+              {{typeArray[indexList]}}
+            </view>
+         </picker>
+      </view>
+      <view class="result">
+         <view class="newsongdiv">
+            <view wx:for="{{listsong}}" wx:key>
+               <!-- <navigator url="../play/play?id={{item.id}}&picUrl={{encodeURIComponent(item.song.album.picUrl)}}"  class="newsongdiv-item"> -->
+               <view class="newsongdiv-item">
+                  <text class="num" decode="{{true}}">{{lightWord.addZero(index+1)}}&nbsp;&nbsp;&nbsp;</text>
+                  <view class="newsongdiv-item-info" bindtap="toPlay" data-id="{{item.id}}" data-picUrl="{{item.song.album.picUrl}}">
+                     <view>{{item.name}}
+                     </view>
+                     <view class="newsongdiv-item-info-detail">{{item.ar[0].name}}-{{item.al.name}}</view>
+                  </view>
+                  <view class="playDivBorder">
+                     <view class="playDiv"></view>
+                  </view>
+               </view>
+               <!-- </navigator> -->
+            </view>
+         </view>
+      </view>
+   </view>
 
-  <view></view>
+   <view class="ThirdTab" hidden="{{buttonOpiton!=2}}">
+      <input placeholder="搜索歌曲、歌手、专辑" bindinput="getWord" bindconfirm="search" id="searchInput" value="{{word}}"></input>
+      <image class="searchimg" src="../../image/search.png" bindtap="search"></image>
+      <image class="clearimg" src="../../image/clear.png" bindtap="clear"></image>
+      <view class="result">
+         <view class="newsongdiv">
+            <view wx:for="{{searchsong}}" wx:key>
+               <!-- <navigator url="../play/play?id={{item.id}}&picUrl={{encodeURIComponent(item.song.album.picUrl)}}"  class="newsongdiv-item"> -->
+               <view class="newsongdiv-item">
+                  <view class="newsongdiv-item-info" bindtap="toPlay" data-id="{{item.id}}" data-picUrl="{{item.song.album.picUrl}}">
+                     <!-- <view >{{lightWord.filterKeyLight(item.name,word)}} -->
+                     <view class='blue'>{{item.name}}
+                     </view>
+                     <view class="newsongdiv-item-info-detail">{{item.artists[0].name}}-{{item.album.name}}</view>
+                  </view>
+                  <view class="playDivBorder">
+                     <view class="playDiv"></view>
+                  </view>
+               </view>
+               <!-- </navigator> -->
+            </view>
+         </view>
+      </view>
+   </view>
 </view>

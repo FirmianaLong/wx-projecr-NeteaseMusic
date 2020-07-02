@@ -10,7 +10,6 @@
   width: 750rpx;
   display: table-cell;
   vertical-align: middle;
-  padding: 20rpx;
 }
 
 .account {
