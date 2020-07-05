@@ -1,4 +1,5 @@
-const host = "http://172.16.10.185:3000";
+// const host = "http://172.16.10.185:3000";
+const host = "http://192.168.1.100:3000";
 
 
 const apiConfig = {

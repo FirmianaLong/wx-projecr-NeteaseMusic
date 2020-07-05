@@ -100,7 +100,6 @@ Page({
    },
    getPersonalized: function() {
       app.util.request('POST', app.apiConfig.personalized, {}).then(data => {
-         console.log(data)
          this.setData({
             personalized: data.data.result
          })
@@ -139,7 +138,7 @@ Page({
          this.setData({
             topList: data.data.list
          })
-         console.log(this.data.topList)
+         this.getList(this.data.topList[0].id);
       })
    },
    //热歌榜
@@ -171,7 +170,7 @@ Page({
       this.setData({
          searchsong: [],
          word: ""
-      })
+      }) // mark: xxx
    },
 
    /**
@@ -184,7 +183,11 @@ onLoad: function(options) {
       this.getPersonalized();
       this.getNewSong();
       this.getTopList();
-      this.getList(this.data.topList[0].id);
+
+      // setTimeout(()=>{
+      //    console.log(this.data.topList)
+      //    this.getList(this.data.topList[0].id);
+      // },10)
    },
 
    /**

@@ -17,7 +17,7 @@
     "navigationBarTextStyle": "black",
     "enablePullDownRefresh": true
   },
-  "tabBar": {
+  "注释tabBar": {
     "selectedColor": "#dd504f",
     "list": [
       {
